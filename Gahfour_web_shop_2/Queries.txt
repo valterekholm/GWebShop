@@ -1,0 +1,52 @@
+CREATE TABLE items (
+  id int PRIMARY KEY IDENTITY(1,1),
+  full_name nvarchar(100) DEFAULT NULL,
+  short_name nvarchar(25) NOT NULL,
+  mark_id int NOT NULL foreign key references mark(id),
+  created_date timestamp NOT NULL)
+
+CREATE TABLE manufacturer (
+  id smallint IDENTITY(1,1),
+  logo_file varchar(50),
+  name varchar(50) NOT NULL,
+  country varchar(50),
+  website varchar(70),
+  PRIMARY KEY (id)
+)
+
+CREATE TABLE mark (
+  id int NOT NULL IDENTITY(1,1) primary key,
+  manufacturer_id smallint DEFAULT 0 foreign key references manufacturer (id),
+  name nvarchar(50) NOT NULL DEFAULT 0,
+  banner_img nvarchar(100)
+)
+
+CREATE TABLE shipping_class (
+  id int NOT NULL identity(1,1) primary key,
+  name nvarchar(50),
+  price smallint
+)
+
+CREATE TABLE shop_order (
+  id int NOT NULL PRIMARY KEY IDENTITY(1,1),
+  fullname nvarchar(100),
+  address_line_1 nvarchar(100),
+  postal_code varchar(6),
+  city varchar(20),
+  phone varchar(20),
+  email varchar(50),
+  created_date datetime
+)
+
+CREATE TABLE shop_order_line (
+  id int NOT NULL PRIMARY KEY IDENTITY(1,1),
+  shop_order_id int NOT NULL FOREIGN KEY REFERENCES shop_order(id),
+  item_id int NOT NULL FOREIGN KEY REFERENCES items(id),
+  quantity smallint)
+
+CREATE TABLE users (
+  id int NOT NULL PRIMARY KEY IDENTITY(1,1),
+  email nvarchar(100) NOT NULL,
+  password nvarchar(255) NOT NULL
+)
+
