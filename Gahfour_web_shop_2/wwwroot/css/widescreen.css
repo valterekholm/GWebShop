@@ -1,0 +1,24 @@
+/*meaning > 500 px wide*/
+h1{
+	font-size: 2em;
+}
+
+div#content{
+	width: 80%;	
+}
+
+#menu{
+		/*big screen*/
+	vertical-align: top;
+	display: inline-block;
+	width: 19%;
+	font-size: 1.5em;
+}
+
+#menu ul{
+	padding: 0 0 0 10px;
+}
+
+.product{
+	margin: 3px 10px 20px 10px;
+}

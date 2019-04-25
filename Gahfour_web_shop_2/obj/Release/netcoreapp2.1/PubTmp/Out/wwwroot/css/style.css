@@ -1,0 +1,175 @@
+body{
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+}
+
+a{
+	text-decoration: none;
+	color: #333;
+}
+
+h1, h2, h3, h4, h5{
+	font-family: abelregular;
+}
+
+h1{
+	/*font-size: 2em;*/
+	font-weight: bold;
+}
+
+ul{
+	margin: 0;
+}
+
+
+div#top_area{
+	box-sizing: border-box;
+	background-color: #222;
+	height: 200px; /*big screen*/
+}
+
+div#top_area img{
+	display: inline-block;
+	box-sizing: inherit;
+	border: 2px dashed gray;
+	max-height: 200px;
+	max-width: 100%;
+}
+
+#top_area #banner_area{
+	height: 100%;
+	box-sizing: inherit;
+}
+
+#top_area #banner_area div{
+	display: inline-block;
+	box-sizing: inherit;
+	height: 100%;
+	vertical-align: top;
+	margin: 0 1%;
+}
+
+#top_area #banner_area #left_logo_area{
+	/*background: #333;*/
+	width: 11%;
+}
+
+#banner_text_area{
+	width: 310px;
+	padding: 10px;
+	text-align: right;
+	width: 69%;
+}
+
+#top_area #banner_area #right_logo_area{
+	/*background: #333;*/
+	width: 11%;
+	float: right;
+	text-align: right;
+}
+
+.lighttext{
+	color: rgba(255,255,255,.8);
+}
+
+div#mainpage{
+	/*big screen*/
+	box-sizing: border-box;
+}
+
+/*div#mainpage div{
+}*/
+
+div#content{
+	display: inline-block;
+	box-sizing: inherit;
+}
+
+#content section{
+	display: block;
+	box-sizing: inherit;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-width: 0 0 1px;	
+}
+
+div#menu{
+	box-sizing: inherit;
+	font-family: abelregular/*'Segoe UI', 'Optima'*/;
+	font-weight: bold;
+	/*background-color: #ff7;*/
+}
+
+div#menu ul{
+	list-style-type: none;
+	background-color: transparent;/*inherit;*/
+}
+
+div#menu>ul>li{
+	position: relative;
+	background-color: inherit;
+}
+
+div#menu ul>li:hover{
+	background-color: rgba(100,100,100,.2);
+}
+
+div#menu ul a{
+	display: inline-block;
+	padding: 12px 15px;
+	width: 100%;
+}
+
+#menu ul li.active ul{/*for smaller screens*/
+	display: block;
+	/*position: absolute;*/
+	/*width: auto;*/
+	/*height: auto;*/
+}
+
+.product{
+	width: 260px;
+	height: 313px;
+	border: 1px solid gray;
+	display: inline-block;
+	vertical-align: top;
+    text-align: center;
+}
+
+.product img{
+	width: 100%;/*For square images or horizontal*/
+}
+.product img.vertical{
+	height: 260px;/*For vertical images - same as .product (inner-) width*/
+    width: unset;
+}
+
+.product>div{
+    height: 265px;
+    overflow:hidden;
+}
+
+.product_info{
+    text-align: left;	
+}
+
+.product_info span{
+	box-sizing: border-box;
+	display: inline-block;
+	padding-left: 4px;	
+	line-height: 1.29em;
+	width: 125px;
+}
+
+.product_info span.price{
+	padding:1px 6px;
+	background-color: rgba(243,186,78,.69);
+	text-align: right;
+	font-weight: bold;
+	color: #322;
+	float: right;
+	width: auto;
+}
+

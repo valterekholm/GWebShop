@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "GetColsFromWidth";
+}
+@section scripts {
+    <script src="~/js/site.js"></script>
+    <script>
+        window.onload = function () {
+            var width = document.documentElement.clientWidth;
+            //alert("@Url.Action("GetColsFromWidth", "Home")");
+            //alert("@Url.Content("~/Home")");
+            loadData("/Home/AjaxGetCols/?width=" + width + "&contentWidth=81&unit=percent", setMyCols);
+            //document.documentElement.clientWidth
+        }
+    </script>
+}
+<div id="content">
+    <h2>GetColsFromWidth</h2>
+    <p id="cols">@ViewData["cols"]</p>
+    <p>@Url.Content("~")</p>
+</div>

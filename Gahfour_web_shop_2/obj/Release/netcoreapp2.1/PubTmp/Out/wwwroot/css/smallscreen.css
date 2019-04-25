@@ -1,0 +1,47 @@
+div#content{
+	width: 100%;	
+}
+
+h1{
+	font-size: 1.87em;
+}
+
+div#top_area{
+	height: 110px;
+}
+
+#menu{
+	width: 100%;
+	display: block;
+	/*background: #991;*/
+	font-size: 1.4em;
+}
+
+#menu ul{
+	padding: 10px 0 10px 2px;
+	width: 99%;
+}
+
+#menu>ul>li{
+	display: inline-block;
+	/*width: 30%;*/
+	/*min-width: auto;*/
+	padding: 0;
+}
+
+div#menu ul a{
+	display: inline;
+}
+
+#menu ul ul{
+	position: absolute;
+	width: 140px;
+}
+
+div#menu ul ul li{
+	display: block;
+	width: auto;
+}
+.product{
+	margin: 3px 0 20px 0;
+}

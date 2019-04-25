@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
+    <link rel="icon" href="~/favicon.ico">
+    <title>@ViewData["Title"] - Gahfour_web_shop_2</title>
+
+    <environment include="Development">
+        @*
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+            <link rel="stylesheet" href="~/css/site.css" />
+        *@
+    </environment>
+    <environment exclude="Development">
+        @*
+            <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+                  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+                  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+            <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />*@
+    </environment>
+
+    <link rel="stylesheet" href="~/fonts/stylesheet.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" media="screen and (min-width: 581px)" href="~/css/widescreen.css" />
+    <link rel="stylesheet" media="screen and (min-width: 901px)" href="~/css/widescreen900.css" />
+    <link rel="stylesheet" media="screen and (max-width: 900px)" href="~/css/mediumscreen.css" />
+    <link rel="stylesheet" media="screen and (max-width: 580px)" href="~/css/smallscreen.css" />
+
+
+</head>
+<body>
+    @*
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Gahfour_web_shop_2</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        <li><a asp-area="" asp-controller="WebShop" asp-action="Index">Web shop</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    *@
+
+    <div id="top_area">
+        <div id="banner_area">
+            <div id="left_logo_area">
+                <img src="~/images/rect4157.png" alt="Logo_1">
+            </div><div id="banner_text_area">
+                <span class="lighttext">أهلا و سهلا</span>
+            </div><div id="right_logo_area"><img src="~/images/rect4158.png" alt="Logo_2"></div>
+        </div>
+    </div>
+    <div id="mainpage">
+        <div id="menu">
+            <ul>
+                <li>@Html.ActionLink("Start", "Index", "Home")</li>@*index.html*@
+                <li><a href="#">Märken</a><ul><li><a href="#">Märke A</a></li><li><a href="#">Märke B</a></li><li><a href="#">Märke C</a></li></ul></li>
+                <li class="rightli"><a href="#">Om</a></li>
+            </ul>
+        </div>
+        @RenderBody()
+    </div>
+    @*<partial name="_CookieConsentPartial" />*@
+
+
+    @*
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; 2018 - Gahfour_web_shop_2</p>
+            </footer>
+        </div>
+    *@
+    <environment include="Development">
+        @*
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="~/js/site.js" asp-append-version="true"></script>
+        *@
+    </environment>
+    <environment exclude="Development">
+        @*
+            <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery"
+                    crossorigin="anonymous"
+                    integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+            </script>
+            <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                    crossorigin="anonymous"
+                    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+            </script>
+            <script src="~/js/site.min.js" asp-append-version="true"></script>
+        *@
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

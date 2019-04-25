@@ -1,0 +1,29 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Index";
+}
+<div id="content">
+    <h2>Admin</h2>
+
+    @{
+        if (!(bool)ViewData["anyAdmin"])
+        {
+            <p>None found - register</p>
+            Html.BeginForm("Create", "Admin", FormMethod.Post);
+            @Html.Label("Namn");
+            @Html.TextBox("Name");
+            <br />
+            @Html.Label("Email");
+            @Html.TextBox("Email");
+            <br />
+            <p>Ditt lösenord kommer genereras i.A</p>
+            <input type="submit" />
+            Html.EndForm();
+        }
+        else
+        {
+            <p>Admin</p>
+        }
+        <p>Host: @ViewData["host"]</p>
+    }
+</div>

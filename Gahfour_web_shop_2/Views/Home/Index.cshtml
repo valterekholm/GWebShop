@@ -1,0 +1,126 @@
+﻿@model List<Item>
+@{
+    //startsida
+    ViewData["Title"] = "Indexsida";
+}
+
+@section scripts{
+    <script src="~/js/site.js"></script>
+    <script src="~/js/rendering.js"></script>
+    @if ((bool)ViewData["useTableGrid"])
+    {
+        <script>
+            window.onload = function () {
+                //alert("@ViewData["imgFolder"]");
+                //alert('@Url.Content("/images")');
+                //alert(@Html.Raw('['+string.Join(',', Model.ToArray().Select(o => o.toJson()).ToArray())+']'));
+                getMyCols(function () {
+                    renderTables(
+                        @Html.Raw('['+string.Join(',', Model.ToArray().Select(o => o.toJson()).ToArray())+']'),
+                        'images/',
+                        '@ViewData["currency"]', '@Url.Action("Details", "Item")');//detailsController
+                });  
+            }
+        </script>
+    }
+}
+
+<div id="content" class="shop-page">
+    <section>
+        <h1>Om sidan</h1>
+        <p>Startad: 2018</p>
+        <p>Ide: en webbshop.</p>
+        <p>Sidan senast uppdaterad: 2019-02-06</p>
+        <p>@ViewData["name"]</p>
+        <!--p>Första artikel i databas:</p-->
+    </section>
+    <section class="products-grid">
+        <!--
+    <table>
+        <tr>
+            <td class="product" id="product_1">
+                <img src="images/ex_bild1.png" alt="Parfym">
+                <div class="product_info">
+                    <span>Märke1</span>
+                    <span>10 ml</span>
+                    <span>typ: a</span>
+                    <span class="price">150 kr</span>
+                </div>
+            </td>
+            <td class="product" id="product_2">
+                <img src="images/ex_bild2.png" alt="Parfym">
+                <div class="product_info">
+                    <span>Märke2</span>
+                    <span>30 ml</span>
+                    <span>typ: a</span>
+                    <span class="price">150 kr</span>
+                </div>
+            </td>
+            <td class="product" id="product_3">
+                <img src="images/ex_bild3.png" alt="Parfym">
+                <div class="product_info">
+                    <span>Märke3</span>
+                    <span>5 ml</span>
+                    <span>typ: a</span>
+                    <span class="price">150 kr</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="product" id="product_4">
+                <img src="images/ex_bild4.png" alt="Parfym">
+                <div class="product_info">
+                    <span>Märke1</span>
+                    <span>10 ml</span>
+                    <span>typ: b</span>
+                    <span class="price">150 kr</span>
+                </div>
+            </td>
+            <td class="product" id="product_5">
+                <img src="images/ex_bild5.png" alt="Parfym">
+                <div class="product_info">
+                    <span>Märke3</span>
+                    <span>10 ml</span>
+                    <span>typ: b</span>
+                    <span class="price">150 kr</span>
+                </div>
+            </td>
+            <td class="product" id="product_6">
+                <img src="images/ex_bild6.png" alt="Parfym">
+                <div class="product_info">
+                    <span>Märke1</span>
+                    <span>10 ml</span>
+                    <span>typ: c</span>
+                    <span class="price">150 kr</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="product" id="product_7">
+                <img src="images/marocko.jpg" alt="Parfym">
+                <div class="product_info">
+                    <span>Märke4</span>
+                    <span>10 ml</span>
+                    <span>typ: a</span>
+                    <span class="price">150 kr</span>
+                </div>
+            </td>
+            <td class="product" id="product_8">
+                <img src="images/bottle.jpg" alt="Parfym">
+                <div class="product_info">
+                    <span>Märke5</span>
+                    <span>10 ml</span>
+                    <span>typ: a</span>
+                    <span class="price">150 kr</span>
+                </div>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+        -->
+        @*await Html.PartialAsync("_Items")*@
+
+
+
+    </section>
+</div>

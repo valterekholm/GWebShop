@@ -1,0 +1,113 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+    print a page of items, using html table
+
+            <table>
+            <tr>
+                <td class="product" id="product_1">
+                    <!--1-->
+                    <img src="images/ex_bild1.png" alt="Parfym">
+                    <div class="product_info">
+                        <span>Märke1</span>
+                        <span>10 ml</span>
+                        <span>typ: a</span>
+                        <span class="price">150 kr</span>
+                    </div>
+                </td>
+                <td class="product" id="product_2">
+                    <!--2-->
+                    <img src="images/ex_bild2.png" alt="Parfym">
+                    <div class="product_info">
+                        <span>Märke2</span>
+                        <span>30 ml</span>
+                        <span>typ: a</span>
+                        <span class="price">150 kr</span>
+                    </div>
+                </td>
+                <td class="product" id="product_3">
+                    <!--3-->
+                    <img src="images/ex_bild3.png" alt="Parfym">
+                    <div class="product_info">
+                        <span>Märke3</span>
+                        <span>5 ml</span>
+                        <span>typ: a</span>
+                        <span class="price">150 kr</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="product" id="product_4">
+                    <!--4-->
+                    <img src="images/ex_bild4.png" alt="Parfym">
+                    <div class="product_info">
+                        <span>Märke1</span>
+                        <span>10 ml</span>
+                        <span>typ: b</span>
+                        <span class="price">150 kr</span>
+                    </div>
+                </td>
+                <td class="product" id="product_5">
+                    <!--5-->
+                    <img src="images/ex_bild5.png" alt="Parfym">
+                    <div class="product_info">
+                        <span>Märke3</span>
+                        <span>10 ml</span>
+                        <span>typ: b</span>
+                        <span class="price">150 kr</span>
+                    </div>
+                </td>
+                <td class="product" id="product_6">
+                    <!--6-->
+                    <img src="images/ex_bild6.png" alt="Parfym">
+                    <div class="product_info">
+                        <span>Märke1</span>
+                        <span>10 ml</span>
+                        <span>typ: c</span>
+                        <span class="price">150 kr</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="product" id="product_7">
+                    <!--7-->
+                    <img src="images/marocko.jpg" alt="Parfym">
+                    <div class="product_info">
+                        <span>Märke4</span>
+                        <span>10 ml</span>
+                        <span>typ: a</span>
+                        <span class="price">150 kr</span>
+                    </div>
+                </td>
+                <td class="product" id="product_8">
+                    <!--8-->
+                    <img src="images/bottle.jpg" alt="Parfym">
+                    <div class="product_info">
+                        <span>Märke5</span>
+                        <span>10 ml</span>
+                        <span>typ: a</span>
+                        <span class="price">150 kr</span>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+*@
+<table>
+    @{ 
+        int counter = 0;
+        int rowCount = 0;
+    }
+        @foreach (var item in Model)
+        {
+            if(rowCount == 0)
+            {
+                @:<tr>
+            }
+            <td>item.name</td>
+            counter++;
+            rowCount++;
+            if(rowCount == ViewBag.myCols){
+                    rowCount = 0;
+            }
+        }
+</table>

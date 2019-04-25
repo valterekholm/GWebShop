@@ -1,0 +1,18 @@
+﻿@model Item
+@{
+    ViewData["Title"] = "Details";
+}
+
+@section scripts{
+    }
+<div id="content" class="item-details">
+    <h2 title="Artikel fullnamn">@Model.Full_Name</h2>
+    <p>Name: @ViewData["name"]</p>
+    <img src="../../images/@Model.Image_File" />
+    <p>@Model.Description</p>
+    <p>@Model.Price</p>
+    <p><a href="#">Lägg i varukorg</a></p>
+
+
+</div>
+

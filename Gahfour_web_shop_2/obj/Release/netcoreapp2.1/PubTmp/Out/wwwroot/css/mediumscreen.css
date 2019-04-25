@@ -1,0 +1,10 @@
+#menu ul{
+	padding-left: 2px;
+}
+#menu ul ul{
+	background-color: rgba(255,255,255,.7);/*#ff7;/*Same as div#menu*/
+	display: none;
+	width: auto;
+	height: auto;
+	margin-top: 0px;
+}
